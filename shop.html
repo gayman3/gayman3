@@ -1,0 +1,194 @@
+<html>
+    <head>
+        <title>shop</title>
+    </head>
+    <body>
+        <style>
+            body{
+                background-color:#E7CA94 ;
+            }
+            .a{
+                display: grid;
+                grid-template-areas:  'logo shop search'
+                                'items items menu '
+                                'contact contact contact'
+                
+            }
+            .logo{
+              grid-area: logo;
+              
+
+
+            }
+            
+            
+            .shop{
+                grid-area: shop;
+                text-align: center;
+                font-size: 5rem;
+                font-family:"Brush Script MT", cursive ;
+                width: 30%;
+                
+            }
+            .search{
+                grid-area: search;
+
+            }
+            .items{
+                grid-area:items;
+                display: flex;
+                flex-wrap: wrap;
+                border:1rem solid #DCAF57 ;
+                text-align: center;
+                font-family:"Brush Script MT", cursive ;
+
+
+            }
+            .items{
+                transition: color 0.5s;
+            }
+            .items>div:hover{
+                color:rgb(165, 115, 49);
+                 font-size: 4rem;
+            }
+            .menu{
+                grid-area: menu;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                text-align: center;
+                font-size:2rem ;
+                font-family:"Brush Script MT", cursive ;
+                
+                
+               
+            }
+            .menu>div{
+                transition:color 2s, ;
+            }
+            .menu>div:hover{
+                color:coral;
+                font-size: 3rem;
+
+            }
+
+            .contact{
+                grid-area: contact;
+                border-style: solid;
+                border-color: crimson;
+                border-width:1rem 0 0 0;
+                font-family: "Brush Script MT", cursive;
+                text-align: center;
+            }
+            .items > img, .items > div{
+                width: 20%;
+                height:10rem;
+               border: 1rem #EEB342 solid;
+               font-family:"Brush Script MT", cursive;
+
+            }
+            .logo > img{
+                width: 5rem;
+                height:5rem;
+
+            }
+            img{
+                width: 40rem;
+                height: 20rem;
+
+            }
+            
+            .fixed-show{
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .hidden{
+                display: none;
+            }
+     
+
+        </style>
+         <img src="navalnyy_161608883_orig_.jpg" id="puten" class="fixed-show hidden" onclick="hide(this)"/>
+         <img src=ttttttt.jpg id="obema" class="fixed-show hidden" onclick="hide(this)"/>
+        <div class="a">
+         
+            <div class="logo"><img src="yOo4G1fQu9.png"/></div>
+            <div class="shop">mezhopa</div>
+            <div class="search"> <input type="search"/><button>(ಠ_ಠ)</button></div>
+            <div class="items">
+                <img src="maxresdefault.jpg"/>
+                <img src="unnamed.jpg"/>
+                <img src="kkkkk.jpg"/>
+                <div>15$</div>
+                <img src="hqdefault.jpg"/>
+                <img src="gorilla-brothers-reunited-after-being-separated-for-over-two-years-at-longleat-safari-park-wiltshire-britai-shutterstock-editorial-1838159a.jpg"/>
+                <img src="EVGAxxYXYAE2e4T.jpg"/>
+                <div>10$</div>
+                <img src="0945da4ee0540575cf529227297ce04d.jpg"/>
+                <img src="1.jpg"/>
+                <img src="1492453353-stolica-s-su-maxresdefault-2.jpg"/>
+                 <div>5$</div>
+                <img src="putin13.jpg"/>
+                <img src="d583b28f420ba9c3dbf85a259493041d.jpg"/>
+                <img src="EJAC7zPW4AAX6bK.jpg"/>
+                <div>1$</div>
+            </div>
+            <div class="menu">
+                <div onclick="playMusic('russia')">россия</div>
+                <div onclick="playMusic('usa')">америка</div>
+                <div onclick="showPic('puten');playMusic('puten')">путин</div>
+                <div onclick="showPic('obema');playMusic('obema')">обама</div>
+                
+                                           
+            </div>
+            <div class="contact"> 89882556334 по предложениям звонить</div>
+        </div>
+        <audio id="player"></audio>
+        <script>
+            function playMusic(music)
+            {
+                var audioPlayer = document.getElementById('player');
+                             
+
+                switch(music){
+                    case 'russia':{
+                        audioPlayer.src='Фашисты - Гимн Фашистской Германии.mp3';
+                        break;
+                    }
+                    case 'usa':{
+                        audioPlayer.src='Александр Пономарев - Гимн Украины.mp3';
+                        break;
+                    }
+                    case 'puten':{
+                        audioPlayer.src='gachi.mp3';
+                        break;
+                    }
+                    case 'obema':{
+                        audioPlayer.src='ttttt.mp3';
+                        break;
+                    }
+                    
+                }
+                audioPlayer.play();
+            }
+
+            function showPic(par) {
+                if(par == 'puten'){
+                    document.querySelector('#puten').classList.remove('hidden');
+                }
+                if(par == 'obema'){
+                    document.querySelector('#obema').classList.remove('hidden');
+                }
+            }
+
+            function  hide(ob) {
+                ob.classList.add('hidden');
+            }
+        </script>
+    </body>
+</html>
